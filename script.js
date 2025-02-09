@@ -23,7 +23,7 @@ function test(search_Q) {
             humidityValue = data.current.humidity + "%";
             windValue = data.current.wind_kph + "km/h";
             tempValue = data.current.temp_c + "\u00B0C";
-            showCity.innerText = (searchQ.toString()).charAt(0).toUpperCase() + searchQ.slice(1);
+            showCity.innerText = (search_Q.toString()).charAt(0).toUpperCase() + search_Q.slice(1);
             humidityText.innerText = humidityValue;
             windText.innerText = windValue;
             tempText.innerText = tempValue;
@@ -34,7 +34,7 @@ function test(search_Q) {
             windText.innerText = "";
             tempText.innerText = "";
             showCity.id = "err";
-            if (err.error.code == 1006) {
+            if (err?.error?.code == 1006) {
                 showCity.innerHTML = err.error.message;
                 console.log(err.error);
 
