@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="config.js"></script>
 </head>
+
 <body>
-    <h1>hello world</h1>
+    <div id="weather-card">
+        <div id="search-bar">
+            <input type="text" placeholder="Enter the city" name="city-search" id="city-search-box">
+            <button type="submit"><img width="40" height="40" src="https://img.icons8.com/clouds/100/search.png"
+                    alt="search"/></button>
+        </div>
+        <div id="weather-image">
+            <img width="200" height="200" src="https://img.icons8.com/clouds/500/sun.png" alt="weather-image" />
+            <h1 id="temp-value">
+            </h1>
+            <h2 id="city"></h2>
+        </div>
+        <div id="app-bottom">
+            <div id="weather-humidity">
+                <img width="65" height="65" src="https://img.icons8.com/officel/80/humidity.png" alt="humidity" />
+                <div id="humidity-text">
+                    <h3 id="humidity-text-value"></h3>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div id="weather-windspeed">
+                <img width="75" height="70"
+                    src="data:image/png;base64,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"
+                    alt="wind">
+                <div id="wind-text">
+                    <h3 id="wind-text-value"></h3>
+                    <p>Wind Speeded</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>

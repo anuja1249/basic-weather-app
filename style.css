@@ -1,4 +1,126 @@
-h1{
-   color: Red;
-   font-weight:bold; 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+#weather-card {
+    background-image: linear-gradient(rgb(74, 163, 201), rgb(89, 162, 139));
+    padding: 4rem 1.5rem 4rem 1.5rem;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 35%;
+    height: 90%;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+#city-search-box {
+    border-radius: 3rem;
+    width: 80%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+
+}
+
+#search-bar {
+    display: flex;
+    gap: .7rem;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+button {
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: .1rem;
+    height: 3rem;
+    width: 3rem;
+
+}
+
+#weather-image {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1,
+h2 {
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: white;
+
+}
+
+h1 {
+    font-size: 3rem;
+
+}
+
+p {
+    font-size: 1rem;
+    font-family: "Playfair Display", serif;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: "Playfair Display", serif;
+
+
+}
+
+#app-bottom {
+    display: flex;
+    gap: .1rem;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#weather-humidity,
+#weather-windspeed {
+    display: flex;
+    gap: .5rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#wind-text,
+#humidity-text {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem .5rem 1rem .3rem;
+    color: white;
+
+
+}
+
+#err {
+    font-size: 1rem;
+    color: rgb(204, 95, 95);
+    font-style: italic;
 }
